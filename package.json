@@ -1,17 +1,80 @@
 {
-  "name": "projectone",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "express": "~4.16.0",
-    "hbs": "~4.0.1",
-    "http-errors": "~1.6.2",
-    "morgan": "~1.9.0",
-    "node-compass": "0.2.3"
-  }
+    "name": "es7-node-starter",
+    "description": "ES7 Node Express Boilerplate",
+    "version": "0.0.1",
+    "private": true,
+    "main": "./src/index.js",
+    "scripts": {
+        "start": "concurrently \"yarn run watch:css\" \"yarn run dev\"",
+        "dev": "nodemon",
+        "watch:js": "set DEBUG=app_debug:* & babel-node ./src/index.js",
+        "build:css": "node-sass --omit-source-map-url --source-map=public/css --include-path=public/scss --output-style=expanded public/scss/app.scss public/css/app.css",
+        "watch:css": "yarn run build:css --watch --recursive ",
+        "build:js": "set DEBUG=app_debug:* & babel ./src -d dist --source-maps",
+        "serve:js": "node ./dist/index.js",
+        "serve": "yarn run build:css & yarn run serve:js",
+        "clean:dist": "rimraf dist",
+        "lint": "eslint . ./src/index.js",
+        "lint:fix": "eslint . ./src/index.js --fix"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 9",
+        "not dead"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/petarnonkovic/es7-node-starter.git"
+    },
+    "keywords": [
+        "Node.js",
+        "Javascript",
+        "Express",
+        "Sequelize"
+    ],
+    "dependencies": {
+        "@babel/polyfill": "^7.2.5",
+        "@babel/runtime": "^7.3.1",
+        "bcrypt-nodejs": "^0.0.3",
+        "bulma": "^0.7.4",
+        "compression": "^1.7.3",
+        "concurrently": "^4.1.0",
+        "connect-flash": "^0.1.1",
+        "cors": "^2.8.5",
+        "debug": "~4.1.1",
+        "dotenv": "^6.2.0",
+        "express": "~4.16.4",
+        "express-handlebars": "^3.0.2",
+        "express-session": "^1.15.6",
+        "helmet": "^3.15.1",
+        "http-errors": "~1.7.2",
+        "joi": "^14.3.1",
+        "lodash": "^4.17.11",
+        "morgan": "~1.9.1",
+        "passport": "^0.4.0",
+        "passport-local": "^1.0.0",
+        "sequelize": "^4.42.1",
+        "sequelize-cli": "^5.4.0",
+        "sqlite3": "^4.0.6"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.2.3",
+        "@babel/core": "^7.3.4",
+        "@babel/node": "^7.2.2",
+        "@babel/plugin-proposal-class-properties": "^7.3.4",
+        "@babel/plugin-transform-runtime": "^7.3.4",
+        "@babel/preset-env": "^7.3.4",
+        "babel-eslint": "^10.0.1",
+        "babel-plugin-transform-async-to-module-method": "^6.24.1",
+        "eslint": "^5.15.1",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.16.0",
+        "eslint-plugin-node": "^8.0.1",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "node-sass": "^4.11.0",
+        "nodemon": "^1.18.10",
+        "standard": "^12.0.1"
+    }
 }

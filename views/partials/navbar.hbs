@@ -1,0 +1,60 @@
+{{!-- App Main Navigation --}}
+<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+    <div class="container">
+        {{!-- Nav Logo & Toggler --}}
+        <div class="navbar-brand">
+            {{!-- logo --}}
+            <a class="navbar-item" href="/">
+                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            </a>
+            {{!-- toggler --}}
+            <a role="button" id='toggleButton' class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="mainNav">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        {{!-- /.navbar-brand --}}
+
+        {{!-- Navigation Links Menu --}}
+        <div id="mainNav" class="navbar-menu">
+            {{!-- right end --}}
+            <div class="navbar-end">
+                {{!-- Link: index --}}
+                <a href='/' class="navbar-item">
+                    <strong>Home</strong>
+                </a>
+                {{!-- buttons group --}}
+                <div class="navbar-item">
+                    <div class="buttons">
+                        {{#if isAuthenticated}}
+                            {{!-- Link: dashboard --}}
+                            <a href='/dashboard' class='button is-success'>
+                                Dashboard
+                            </a>
+                            {{!-- Link: logout --}}
+                            <a href='/users/logout' class='button is-danger'>
+                                Logout
+                            </a>
+                        {{else}}
+                            {{!-- Link: sign-up --}}
+                            <a href='/users/register' class="button is-primary">
+                                <strong>Sign up</strong>
+                            </a>
+                            {{!-- Link: sign-in --}}
+                            <a href='/users/login' class="button is-info">
+                                Log in
+                            </a>
+                        {{/if}}
+                    </div>
+                </div>
+                {{!-- /buttons group --}}
+            </div>
+            {{!-- /.navbar-end --}}
+        </div>
+        {{!-- /.navbar-menu --}}
+    </div>
+    {{!-- /.container --}}
+</nav>
+{{!-- /.navbar --}}

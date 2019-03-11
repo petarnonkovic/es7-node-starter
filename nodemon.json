@@ -1,0 +1,5 @@
+{
+    "exec": "yarn run serve:dev",
+    "watch": ["./src", "./public", "./views"],
+    "ext": ".js, .scss, .json, .css, .hbs"
+}

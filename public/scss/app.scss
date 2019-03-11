@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* Bulma updates */
+@import 'variables';
+/* Bulma Library */
+@import "../../node_modules/bulma/bulma.sass";
+
+
+/* Global Styles font-family: 'Laila', serif; */
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+
+    main {
+        flex: 1 1 auto;
+    }
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 2px 2px 4px rgba(204, 204, 204, 0.5);
+}
+
+
+/* Flash Messages | Background */
+.is-success-transparent {
+    background-color: $msg-success;
+}
+
+.is-danger-transparent {
+    background-color: $msg-failure;
+}
+
+/* Flash Messages | Fade Out */
+.fade-out {
+    animation-name: fadeOut;
+    animation-duration: 700ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+/* Fade Out | Animation Keyframes */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* Helper Classes | Margin */
+.mt2 {
+    margin-top: 1rem;
+}

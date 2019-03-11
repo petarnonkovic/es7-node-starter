@@ -1,2 +1,15 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+{{!-- head section inject --}}
+{{#section 'css'}}
+    <style>
+    </style>
+{{/section}}
+
+<div class='hero'>
+    <p>Index Page</p>
+</div>
+
+{{!-- js section inject --}}
+{{#section 'js'}}
+    <script>
+    </script>
+{{/section}}

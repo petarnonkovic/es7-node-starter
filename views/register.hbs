@@ -1,0 +1,111 @@
+{{!-- head section inject --}}
+{{#section 'css'}}
+    <style>
+        .label:not(:last-child) {
+            margin-bottom: 0;
+        }
+    </style>
+{{/section}}
+
+{{!-- page heading --}}
+
+
+<div class="columns is-multiline is-centered">
+
+    {{!-- page title --}}
+    <div class='column is-full'>
+        <div class='title has-text-centered mt2'>Users {{title}}</div>
+    </div>
+    {{!-- form notifications --}}
+    <div class='column is-full'>
+        {{> messages}}
+    </div>
+
+    <div class="column is-half is-one-third-widescreen">
+        {{!-- page form --}}
+        <form id='registerForm' class='box' action='/users/register' method='POST'
+            enctype="application/x-www-form-urlencoded">
+
+            <div class="field">
+                {{!-- Username --}}
+                <label class="label">Username</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input type='text' name='username' value='{{iif name name ''}}'
+                        class='input{{iif errors.username ' is-danger' ''}}' placeholder="Username">
+                    <span class='icon is-small is-left'>
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                    </span>
+                    <span class='icon is-small is-right{{iif errors.username ' is-danger' ''}}'>
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </span>
+                </div>
+                {{!-- validation error messages --}}
+                {{#if errors.username}}
+                    {{#each errors.username as |errorMessage|}}
+                        <p class='help is-danger'>{{errorMessage}}</p>
+                    {{/each}}
+                {{/if}}
+
+                {{!-- Email --}}
+                <label class="label mt2">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input type='text' name='email' value='{{iif email email ''}}'
+                        class='input{{iif errors.email ' is-danger' ''}}' placeholder="Email">
+                    <span class='icon is-small is-left'>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </span>
+                    <span class='icon is-small is-right{{iif errors.email ' is-danger' ''}}'>
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </span>
+                </div>
+                {{!-- validation error messages --}}
+                {{#if errors.email}}
+                    {{#each errors.email as |errorMessage|}}
+                        <p class='help is-danger'>{{errorMessage}}</p>
+                    {{/each}}
+                {{/if}}
+
+                {{!-- Password --}}
+                <label class="label mt2">Password</label>
+                <div class="control has-icons-left">
+                    <input type="password" name='password' value='{{iif password password ''}}'
+                        class="input{{iif errors.password ' is-danger' ''}}" placeholder="Password">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock" aria-hidden="true"></i>
+                    </span>
+                </div>
+                {{!-- validation error messages --}}
+                {{#if errors.password}}
+                    {{#each errors.password as |errorMessage|}}
+                        <p class='help is-danger'>{{errorMessage}}</p>
+                    {{/each}}
+                {{/if}}
+
+                {{!-- Control Buttons --}}
+                <div class="field mt2">
+                    <div class="control">
+                        <button type='submit' class="button is-link is-fullwidth">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    {{!-- /.column --}}
+
+    {{!-- Login Instead --}}
+    <div class="column is-12">
+        <div class='box'>
+            <p class='has-text-centered'>Already member? <a class='content-link is-size-5' href='/users/login'>Log
+                    In</a></p>
+        </div>
+    </div>
+
+
+</div>
+{{!-- /.columns wrapper --}}
+
+{{!-- js section inject --}}
+{{#section 'js'}}
+    <script>
+    </script>
+{{/section}}

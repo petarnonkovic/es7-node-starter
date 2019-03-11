@@ -1,0 +1,37 @@
+{{!-- App Head, up to body tag --}}
+{{> layout/head}}
+
+{{!-- App Body --}}
+<div class='App'>
+
+    {{!-- Page Header --}}
+    <header>
+        {{!-- App NavBar --}}
+        {{> navbar}}
+    </header>
+
+    {{!-- render pages Main Content --}}
+    <main>
+        {{{body}}}
+    </main>
+
+    {{!-- Page Footer --}}
+    <footer>
+        {{> footer}}
+    </footer>
+
+</div>
+{{!-- /.App --}}
+
+{{> layout/foot}}
+
+{{!-- flash messages --}}
+{{!-- <div class='columns is-centered'> --}}
+{{!-- <div class='column is-half'> --}}
+{{!-- {{> messages}} --}}
+{{!-- </div> --}}
+{{!-- </div> --}}
+{{!-- flash messages --}}
+{{!-- <div class='column is-11-mobile is-two-thirds-tablet is-three-fifths-desktop is-half-widescreen'> --}}
+{{!-- {{> messages}} --}}
+{{!-- </div> --}}

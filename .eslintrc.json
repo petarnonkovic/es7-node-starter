@@ -1,0 +1,26 @@
+{
+    "extends": "standard",
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "comma-dangle": ["error", "only-multiline"],
+        "space-before-function-paren": ["error", {
+            "anonymous": "never",
+            "named": "never",
+            "asyncArrow": "always"
+        }],
+        "indent": ["error", 4],
+        "no-var": ["error"],
+        "prefer-const": ["error"],
+        "operator-linebreak": ["error", "after"],
+        "no-useless-return": "error",
+        "no-undef": "error",
+        "implicit-arrow-linebreak": ["error", "beside"],
+        "padded-blocks": ["error", {
+            "blocks": "never"
+        }]
+    }
+}

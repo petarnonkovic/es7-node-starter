@@ -1,0 +1,23 @@
+{{!-- Success Passport Flash Message --}}
+{{#if success}}
+    <div class="notification is-success-transparent">
+        <button class="delete"></button>
+        <p class='has-text-centered has-text-black-ter'>{{success}}</p>
+    </div>
+{{/if}}
+
+{{!-- Error User Flash Message --}}
+{{#if error_message}}
+    <div class="notification is-danger-transparent">
+        <button class="delete"></button>
+        <p class='has-text-centered has-text-black-ter'>{{error_message}}</p>
+    </div>
+{{/if}}
+
+{{!-- Error Passport Flash Message --}}
+{{#if error}}
+    <div class="notification is-danger-transparent">
+        <button class="delete"></button>
+        <p class='has-text-centered has-text-black-ter'>{{error}}</p>
+    </div>
+{{/if}}
